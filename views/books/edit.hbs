@@ -1,0 +1,49 @@
+<form action="/books/{{book._id}}" method="POST" class="addForm">
+  <input type="hidden" name="_method" value="PUT" />
+  <div class="formInputs">
+    <input
+      type="text"
+      id="title"
+      name="title"
+      value="{{book.title}}"
+      placeholder="Title"
+    />
+    <input
+      type="text"
+      id="author"
+      name="author"
+      placeholder="Author"
+      value="{{book.author}}"
+    />
+    <select name="status" id="status">
+      {{#select book.status}}
+        <option value="public" selected> Public</option>
+        <option value="private">Private</option>
+      {{/select}}
+    </select>
+
+    <input
+      type="number"
+      id="noOfPages"
+      name="noOfPages"
+      placeholder="No. Of Pages"
+      value="{{book.noOfPages}}"
+    />
+    <input
+      type="url"
+      id="bookImg"
+      name="bookImg"
+      value="{{book.bookImg}}"
+      placeholder="Link to Book Image"
+    />
+  </div>
+  <textarea
+    id="body"
+    name="body"
+    placeholder="Book Review/ Summary"
+  >{{book.body}}</textarea>
+  <div class="formBtns">
+    <input type="submit" value="Save" />
+    <a href="/library" class="cancel">Cancel</a>
+  </div>
+</form>

@@ -1,0 +1,33 @@
+<h2 class="formHeading">Add new Book to your Rack</h2>
+<form action="/books" method="POST" class="addForm">
+  <div class="formInputs">
+    <input type="text" id="title" name="title" placeholder="Title" />
+    <input type="text" id="author" name="author" placeholder="Author" />
+    <select name="status" id="status">
+      <option value="public" selected> Public</option>
+      <option value="private">Private</option>
+    </select>
+    <input
+      type="number"
+      id="noOfPages"
+      name="noOfPages"
+      placeholder="No. Of Pages"
+    />
+    <input
+      type="url"
+      id="bookImg"
+      name="bookImg"
+      placeholder="Link to Book Image"
+    />
+  </div>
+  <textarea
+    id="body"
+    name="body"
+    placeholder="Book Review/ Summary"
+    class="ckEditor"
+  ></textarea>
+  <div class="formBtns">
+    <input type="submit" value="Save" />
+    <a href="/library" class="cancel">Cancel</a>
+  </div>
+</form>

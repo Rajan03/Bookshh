@@ -1,0 +1,17 @@
+<div class="singleBook">
+  {{{editIcon book.user user book._id}}}
+  <h2>{{book.title}}</h2>
+  <div>
+    <img src="{{book.bookImg}}" alt="{{book.title}}" />
+    <div class="bookDetails">
+      {{{book.body}}}
+      <div class="ownerData">
+        <img src="{{book.user.image}}" alt="userImg" />
+        <a href="/books/user/{{book.user._id}}">
+          More From
+          {{book.user.displayName}}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

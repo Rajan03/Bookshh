@@ -1,0 +1,18 @@
+<div>
+    {{#each books}}
+            <div class="row">
+                <img src="{{bookImg}}" alt="{{title}}">
+                <div class="bookData">
+                    <h1>{{title}}</h1>
+                    <p>{{stripTags (truncate body 100)}}</p>
+                    <h4><span>Written By: </span>{{author}}</h4>
+                    <span class="align-end">
+                        {{{editIcon user ../user _id}}}
+                        <a href="/books/{{_id}}"  class="chips"> Read More...</a>
+                    </span>
+                </div>
+            </div>
+    {{else}}
+            <p>No Books to show</p>
+    {{/each}}
+</div>       
