@@ -3,13 +3,13 @@ A simple Web app where users can login using their own goole accounts and then c
 Books settled for public view will show up in library and can be seen by all the logged in users.
 
 # Functionalities
- CRUD Operations can be performed
- OAuth LogIn Functionality provided
+ CRUD Operations can be performed\
+ OAuth LogIn Functionality provided\
  
 # Technologies Used 
-a) Handlebars 
-b) CSS
-c) Javascript
-d) Node JS
-e) Mongo DB
-f) Passport
+a) Handlebars \
+b) CSS\
+c) Javascript\
+d) Node JS\
+e) Mongo DB\
+f) Passport\
