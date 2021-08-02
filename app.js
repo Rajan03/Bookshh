@@ -38,7 +38,7 @@ app.use(
 );
 
 // Logging Requests
-if (process.env.NODE_ENV == "development") {
+if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
@@ -79,7 +79,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// GLobal Varialble
+// Global Variable
 app.use((req, res, next) => {
   res.locals.user = req.user || null;
   next();
