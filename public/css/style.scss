@@ -17,6 +17,10 @@
 
 body {
   font-size: 1rem;
+
+  @media screen and (max-width: 900px) {
+    font-size: 0.7rem;
+  }
 }
 
 .login {
@@ -27,11 +31,31 @@ body {
     background-color: #fdfdfd;
     @include flexing(row, space-between, center);
   }
+
   &-content {
-    min-height: 60%;
+    min-height: 80%;
     margin: auto;
     flex: 1;
     @include flexing(column, space-around, center);
+
+    @media screen and (max-width: 900px) {
+      min-height: 90%;
+    }
+
+    @media screen and (max-width: 750px) {
+      min-height: 100%;
+      background-image: linear-gradient(
+          120deg,
+          rgba(0, 0, 0, 0.4) 0%,
+          rgba(255, 114, 114, 0.6) 60%,
+          rgba(255, 114, 114, 0.7) 100%
+        ),
+        url("https://images.unsplash.com/photo-1604866830893-c13cafa515d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjMxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60");
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      backface-visibility: hidden;
+    }
 
     &-heading {
       color: #524c4c;
@@ -41,16 +65,35 @@ body {
       letter-spacing: 0.2rem;
       text-transform: uppercase;
       text-decoration: underline;
+
+      @media screen and (max-width: 900px) {
+        font-size: 2rem;
+      }
+
+      @media screen and (max-width: 750px) {
+        color: #fff7f7;
+      }
     }
 
-    &-form {
-      &-intro {
-        font-size: 0.8rem;
-        letter-spacing: 0.2rem;
-        font-family: "Acme", cursive;
-        text-align: center;
-        color: #524c4c;
-        font-weight: 200;
+    &-intro,
+    &-features,
+    &-technology {
+      width: 80%;
+      font-size: 0.8rem;
+      letter-spacing: 0.15rem;
+      font-family: "Acme", cursive;
+      text-align: center;
+      color: #524c4c;
+      line-height: 1.4rem;
+      font-weight: 200;
+
+      @media screen and (max-width: 900px) {
+        width: 95%;
+        align-self: flex-end;
+        line-height: 1.2rem;
+      }
+      @media screen and (max-width: 750px) {
+        color: #fff7f7;
       }
     }
 
@@ -62,11 +105,91 @@ body {
       color: #fdfdfd;
       letter-spacing: 0.12rem;
       font-weight: 600;
+      transition: all 0.2s linear;
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+      margin-top: 1rem;
+
+      @media screen and (max-width: 900px) {
+        padding: 0.6rem 1rem;
+      }
+
+      @media screen and (max-width: 750px) {
+        background-image: linear-gradient(120deg, #fdfdfd, #fdd5d5);
+        color: #b45151;
+        margin-top: 0rem;
+      }
 
       &:hover {
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-        transform: scaleY(1);
+        transform: scale(1.013);
+      }
+      &:focus {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    &-features,
+    &-technology {
+      text-align: start;
+      margin-top: 1rem;
+
+      @media screen and (max-width: 900px) {
+        margin-top: 0.5rem;
+      }
+      & span {
+        color: #b45151;
+        font-weight: 900;
+        font-size: 0.9rem;
+
+        @media screen and (max-width: 750px) {
+          color: #fff7f7;
+        }
+      }
+      & li {
+        margin: 0.5rem 0;
+        @media screen and (max-width: 900px) {
+          margin: 0.5rem;
+        }
+      }
+    }
+
+    &-technology {
+      & table,
+      & th,
+      & tr,
+      & td {
+        font-size: 0.8rem;
+        letter-spacing: 0.15rem;
+        font-family: "Acme", cursive;
+        text-align: start;
+        color: #524c4c;
+        line-height: 1.4rem;
+        font-weight: 200;
+
+        @media screen and (max-width: 900px) {
+          letter-spacing: 0.1rem;
+          line-height: 1.2rem;
+        }
+
+        @media screen and (max-width: 750px) {
+          color: #fff7f7;
+        }
+      }
+      & table {
+        width: 100%;
+      }
+    }
+    small {
+      letter-spacing: 0.15rem;
+      font-family: "Acme", cursive;
+      text-align: center;
+      color: #524c4c;
+      font-weight: 200;
+      margin-top: 2rem;
+  
+      @media screen and (max-width: 750px) {
+        color: #fff7f7;
+        margin-top: 0rem;
       }
     }
   }
@@ -88,6 +211,14 @@ body {
     @include flexing(column, center, center);
     pointer-events: none;
 
+    @media screen and (max-width: 900px) {
+      flex: 1.2;
+    }
+
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
+
     & h1 {
       color: #fff7f7;
       font-weight: 900;
@@ -95,65 +226,15 @@ body {
       font-family: "Acme", sans-serif;
       letter-spacing: 0.2rem;
       text-transform: uppercase;
-      //   font-family: "Indie Flower", cursive;
       max-width: 90%;
       text-align: center;
       flex-wrap: wrap;
       user-select: none;
-      //   background-color: aqua;
+
+      @media screen and (max-width: 900px) {
+        font-size: 1.2rem;
+        max-width: 100%;
+      }
     }
-  }
-}
-.form {
-  &__group:not(:last-child) {
-    margin-bottom: 2rem;
-  }
-
-  &__input {
-    font-size: 1rem;
-    font-family: inherit;
-    color: inherit;
-    padding: 0.5rem 2rem;
-    border-radius: 2px;
-    background-color: hsla(0, 0%, 100%, 0.7);
-    border: 1px solid rgba(206, 199, 199, 0.3);
-    border-bottom: 3px solid transparent;
-    width: 70%;
-    margin: 0 auto;
-    display: block;
-    transition: all 0.3s;
-
-    @media screen and (max-width: 400) {
-      width: 100%;
-    }
-
-    &:focus {
-      outline: none;
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-      border-bottom: 2px solid #f76a6a;
-    }
-
-    &:focus:invalid {
-      border-bottom: 2px solid #ff0000;
-    }
-
-    &::-webkit-input-placeholder {
-      color: #cac8c8;
-    }
-  }
-
-  &__label {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-left: 2rem;
-    margin-top: 0.7rem;
-    display: block;
-    transition: all 0.3s;
-  }
-
-  &__input:placeholder-shown + &__label {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-4rem);
   }
 }
