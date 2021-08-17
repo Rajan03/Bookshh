@@ -11,23 +11,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Shadows+Into+Light&display=swap" rel="stylesheet">  
 
-    <title>Story Book</title>
+    <title>Booksh | Review your Favourite </title>
   </head>
 
   <body>
-    {{> _header}}
-   <div class="container">
-      {{{body}}}
-   </div>
+     <div class="library-container">
+      {{> _sidebar}}
+      <div class="library-innerCard">
+          {{> _header}}
+          {{{body}}}
+      </div>
+     </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.16.0/ckeditor.js"
     ></script>
     <script>
-      
       CKEDITOR.replace('body', { height: 160, width: 690, });
-      const hideNav = () => {
-      document.getElementById('navbar').classList.toggle('hide')
-      }
+      
+      const hideNav = () => {document.getElementById('navbar').classList.toggle('hide')}
       document.getElementById('toggler').onclick = () =>{hideNav()}
     </script>
   </body>
