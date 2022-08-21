@@ -27,7 +27,7 @@ module.exports = (passport) => {
             done(null, user);
           }
         } catch (err) {
-          console.log(err);
+          console.log("PASSPORT JS UNABLE TO CREATE/FIND USER WITH THIS ID. ", err);
         }
       }
     )
